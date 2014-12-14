@@ -58,18 +58,12 @@ function read(channel, callback) {
 }
 
 function tmp36_temp(value) {
-    // ADC Value
-    // (approx)  Temp  Volts
-    //    0      -50    0.00
-    //   78      -25    0.25
-    //  155        0    0.50
-    //  233       25    0.75
-    //  310       50    1.00
-    //  465      100    1.50
-    //  775      200    2.50
-    // 1023      280    3.30
+    // approx 25 C = 750 mV (0.75 V)
+    // 25 / 0.75 = 33.33 C/V
+    // I think? http://www.analog.com/static/imported-files/data_sheets/TMP35_36_37.pdf
 
-    var temp = ((value * 330) / 1023) - 50;
+    var volts = (value * 3.3) / 1023;
+    var temp = volts * 33.333;
     return temp.toFixed(2);
 }
 
