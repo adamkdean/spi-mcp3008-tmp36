@@ -1,0 +1,11 @@
+{
+    "name": "spi-mcp3008-tmp36",
+    "version": "0.0.0",
+    "description": "A Node.js solution for using SPI with MCP3008 ADC chip & TMP36 analogue temp sensor",
+    "main": "src/index.js",
+    "author": "Adam K Dean",
+    "license": "MIT",
+    "dependencies": {
+        "spi": "^0.1.2"
+    }
+}
