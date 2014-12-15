@@ -1,11 +1,11 @@
 "use strict";
 
 var util = require('util'),
-fs = require('fs'),
-SPI = require('spi');
+    fs = require('fs'),
+    SPI = require('spi');
 
 var device = '/dev/spidev0.0',
-spi;
+    spi;
 
 if (!fs.existsSync(device)) {
     throw 'Error, SPI is not activated';
